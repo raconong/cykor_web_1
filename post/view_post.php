@@ -1,6 +1,6 @@
 <?php
-include 'db.php';
-include 'session.php'; // 로그인 상태 확인
+include '../db/db.php';
+include '../auth/session.php'; // 로그인 상태 확인
 
 $id = $_GET['id']; //문서 번호를 가져온다다
 

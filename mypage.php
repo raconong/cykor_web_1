@@ -1,5 +1,5 @@
 <?php
-include 'session.php'; // 로그인 확인
+include '../auth/session.php'; // 로그인 확인
 ?>
 
 <h2>마이페이지</h2>

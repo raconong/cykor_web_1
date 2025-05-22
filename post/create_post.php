@@ -1,6 +1,6 @@
 <?php
-include 'session.php'; // 로그인 상태 확인
-include 'db.php';
+include '../auth/session.php'; // 로그인 상태 확인
+include '../db/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post로 받아온 경우 
     $title = $_POST['title']; //제목

@@ -1,6 +1,6 @@
 <?php
 session_start(); // 세션 시작 -> 로그인 성공시 $_SESSION에 사용자 정보가 저장된다 
-include 'db.php'; // DB 연결
+include '../db/db.php'; // DB 연결
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post를 통해서 데이터를 받아온 경우
     $username = $_POST['username'];
@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post를 통해서 데이터를 �
         if (password_verify($password, $hashedPassword)) { //비밀번호 비교 
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $username;
-            echo "로그인 성공!";
+            echo "로그인 성공";
         } else {
-            echo "비밀번호가 틀렸습니다.";
+            echo "비밀번호가 틀림";
         }
     } else {
-        echo "사용자를 찾을 수 없습니다.";
+        echo "사용자 없음";
     }
 }
 ?>

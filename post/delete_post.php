@@ -1,6 +1,6 @@
 <?php
-include 'db.php';
-include 'session.php';
+include '../db/db.php';
+include '../auth/session.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $post_id = $_POST['id']; //문서 데이터 받아오기 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         echo "게시글 삭제 ";
     } else {
-        echo "권한이 없습니다.";
+        echo "권한 없음";
     }
 }
 ?>

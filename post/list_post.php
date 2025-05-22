@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // DB 연결
+include '../db/db.php'; // DB 연결
 
 // 게시글 + 작성자 이름을 가져오는 쿼리
 //게시물 id,제목, 내용, 생성 시간등 표시 
