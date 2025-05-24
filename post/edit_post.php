@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     if ($row = $result->fetch_assoc()) {
         // 로그인된 id와 게시물의 id 비교 
-        if ($_SESSION['user_id'] != $row['user_id']) {
+        if ($_SESSION['user_id'] != $row['user_id'] && $_SESSION['role'] !== 'admin') {
             echo "권한 없음";
             exit;
         }
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $check->fetch();
     $check->close();
 
-    if ($_SESSION['user_id'] != $author_id) {
+    if ($_SESSION['user_id'] != $author_id && $_SESSION['role'] !== 'admin') {
         echo "권한이 없음";
         exit;
     }

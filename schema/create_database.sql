@@ -5,7 +5,8 @@ USE cykor_web1_db;
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY, -- id 저장 
     username VARCHAR(50) NOT NULL UNIQUE, -- 사용자 이름 저장,동일한 이름 저장 불가
-    password VARCHAR(255) NOT NULL, -- 비밀번호 저장 
+    password VARCHAR(255) NOT NULL, -- 비밀번호 저장
+    role ENUM('user', 'admin') NOT NULL DEFAULT 'user', 
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP -- 계정 생성 시간 저장 
 );
 

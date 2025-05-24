@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $check->fetch();
     $check->close();
 
-      if ($_SESSION['user_id'] == $author_id) {
+      if ($_SESSION['user_id'] == $author_id || $_SESSION['role'] === 'admin') {
         $statement = $connection->prepare("DELETE FROM posts WHERE id = ?");
         $statement->bind_param("i", $post_id);
         $statement->execute();

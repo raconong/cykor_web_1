@@ -21,7 +21,7 @@ if ($row = $result->fetch_assoc())://실행 결과가 존재하는 경우 row에
     <p><small><?php echo $row['created_at']; ?></small></p>
 
     <!-- 로그인한 사용자와 글 작성자가 같을 때만 수정/삭제 버튼 표시 -->
-    <?php if ($_SESSION['user_id'] == $row['user_id']): ?> 
+    <?php if ($_SESSION['user_id'] == $row['user_id'] || $_SESSION['role'] === 'admin'): ?>
         <form action="edit_post.php" method="GET" style="display:inline;">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <button type="submit">수정</button>
