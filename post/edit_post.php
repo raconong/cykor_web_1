@@ -1,6 +1,7 @@
 <?php
 include '../db/db.php';
 include '../auth/session.php';
+include '../header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // 수정할 게시글 ID를 가져옴
@@ -49,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt->bind_param("ssi", $title, $content, $id); //문자, 문자, int
     $stmt->execute();
 
-    echo "게시글 수정  <a href='view_post.php?id=$id'>돌아가기</a>";
+    header("Location: view_post.php?id=$id");
     exit;
 }
 ?>

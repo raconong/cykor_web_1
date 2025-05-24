@@ -1,6 +1,7 @@
 <?php
-include '../db/db.php';
-include '../auth/session.php'; // 로그인 상태 확인
+include '../auth/session.php';     // 로그인 확인
+include '../db/db.php';           // DB 연결
+include '../header.php';   
 
 $id = $_GET['id']; //문서 번호를 가져온다다
 
@@ -34,3 +35,4 @@ if ($row = $result->fetch_assoc())://실행 결과가 존재하는 경우 row에
 <?php else: ?>
     <p>게시글을 찾을 수 없습니다</p>
 <?php endif; ?>
+<p><a href="list_post.php">← 목록으로 돌아가기</a></p>

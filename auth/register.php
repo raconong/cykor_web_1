@@ -23,7 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //사용자가 <form method="POST">
 }
 ?>
 
-<!-- html-->
+<!-- 회원가입 폼 -->
+<?php include '../header.php'; ?>
+<h2>회원가입</h2>
 <form method="POST">
     사용자명: <input name="username" required><br>
     비밀번호: <input type="password" name="password" required><br>

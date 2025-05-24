@@ -13,14 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $check->fetch();
     $check->close();
 
-    if ($_SESSION['user_id'] == $author_id) { //본인 글일 경우 삭제 수행 
-        $stmt = $connection->prepare("DELETE FROM posts WHERE id = ?");
-        $stmt->bind_param("i", $post_id);
-        $stmt->execute();
-        echo "게시글 삭제 ";
-    } else {
-        echo "권한 없음";
+      if ($_SESSION['user_id'] == $author_id) {
+        $statement = $connection->prepare("DELETE FROM posts WHERE id = ?");
+        $statement->bind_param("i", $post_id);
+        $statement->execute();
     }
+
+    header('Location: list_post.php');
+    exit;
 }
 ?>
-<a href="list_post.php">게시글 목록으로 돌아가기</a>
+

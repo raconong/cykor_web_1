@@ -18,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post를 통해서 데이터를 �
         if (password_verify($password, $hashedPassword)) { //비밀번호 비교 
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $username;
-            echo "로그인 성공";
+            header('Location: ../post/list_post.php');
+            exit;
         } else {
             echo "비밀번호가 틀림";
         }
@@ -27,6 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post를 통해서 데이터를 �
     }
 }
 ?>
+
+
+<?php include '../header.php'; ?>
 
 <!-- 로그인 폼 -->
 <form method="POST">
