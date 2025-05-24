@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS posts (
     title VARCHAR(100) NOT NULL, -- 게시글 제목, 공란 불가
     content TEXT NOT NULL, -- 게시물 내용, 공란 불가
     user_id INT NOT NULL, -- user id
+    is_private BOOLEAN DEFAULT FALSE, -- 나만보기 기능 추가
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,-- 글 작성 시간 
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- 글 수정 시간, 현재 시간으로 갱신
     FOREIGN KEY (user_id) REFERENCES users(id) -- user_id 요소는 항상 user 테이블에 존재해야한다 
