@@ -1,5 +1,7 @@
 <?php
-session_start(); // 세션 시작 -> 로그인 성공시 $_SESSION에 사용자 정보가 저장된다 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} 
 include '../db/db.php'; // DB 연결
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { //post를 통해서 데이터를 받아온 경우

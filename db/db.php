@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = 'db';
 $dbname = 'cykor_web1_db';
 $user = 'root';
 $pass = 'racon123!'; 

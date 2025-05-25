@@ -1,7 +1,6 @@
 <?php
 include '../db/db.php';
 include '../auth/session.php';
-include '../header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // 수정할 게시글 ID를 가져옴
@@ -22,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $title = $row['title']; //게시물 내용 확인 
         $content = $row['content'];
+        $is_private = $row['is_private'];
     } else {
         echo "게시글 없음";
         exit;
@@ -55,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header("Location: view_post.php?id=$id");
     exit;
 }
+
+include '../header.php';
 ?>
 
 <!-- 게시글 수정 폼 -->

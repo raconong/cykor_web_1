@@ -1,5 +1,6 @@
 <?php
-include '../db/db.php'; // db.php를 통해 접속 
+include '../db/db.php'; // db.php를 통해 접속
+include '../header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') { //사용자가 <form method="POST">로 요청을 보낸 경우 데이터 저장장
     $username = $_POST['username']; //사용자 입력 받아오기 
@@ -24,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //사용자가 <form method="POST">
 ?>
 
 <!-- 회원가입 폼 -->
-<?php include '../header.php'; ?>
 <h2>회원가입</h2>
 <form method="POST">
     사용자명: <input name="username" required><br>
